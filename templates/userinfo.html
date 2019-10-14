@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}
+用户中心
+{% endblock %}
+{% block label %}
+用户中心页
+{% endblock %}
+
+{% block content %}
+         <div class="row">
+
+            <div class="col-xl-12 col-lg-7">
+
+              <!-- Area Chart -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                </div>
+                <div class="card-body">
+                  <h1>内容</h1>
+                    <table class="table">
+                        <tr><th rowspan=3 style="width: 300px"><img src="/static/img/myy.jpg" width=100%></th><th>姓名</th><td>老张</td><th>性别</th><td>男</td></tr>
+                        <tr><th>年龄</th><td>25</td><th>身份</th><td>讲师</td></tr>
+                        <tr><th>课程</th><td>Python</td><th>阶段</th><td>二</td></tr>
+
+                    </table>
+
+                </div>
+              </div>
+
+              <!-- Bar Chart -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
+                </div>
+                <div class="card-body">
+        <h1>内容表</h1>
+                    <table class="table table-bordered">
+                      <tr  class="table">
+                        <th>星期一</th>
+                        <th>星期一</th>
+                        <th>星期一</th>
+                        <th>星期一</th>
+                        <th>星期一</th>
+                        <th>星期一</th>
+                        <th>星期一</th>
+                      </tr>
+                        {% for week in datelst %}
+                            <tr>
+                            {% for day in week %}
+                                {% if day == 'empty' %}
+                                <td></td>
+                                {% else %}
+                                <td>
+                                    {{ day }}
+                                </td>
+                                {% endif %}
+                            {% endfor %}
+
+
+                            </tr>
+
+                        {% endfor %}
+</table>
+
+
+
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+{% endblock %}
